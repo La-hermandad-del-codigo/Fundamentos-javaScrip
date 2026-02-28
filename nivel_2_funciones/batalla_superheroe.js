@@ -24,7 +24,7 @@ function ataque(nombre1, nombre2, ataque, energia, recuperacion) {
 
 function defender(nombre1, nombre2, ataque, energia, recuperacion) {
     energiaActual = energia - ataque
-    console.log(`${nombre1} recibio ${ataque} de daño por parte de ${nombre2} le queda ${energiaActual}`)
+    console.log(`${nombre1} recibio ${ataque} de daño por parte de ${nombre2}, le queda ${energiaActual} puntos de energia`)
     recargarEnergia(nombre1, energiaActual, recuperacion)
 }
 
@@ -36,6 +36,12 @@ function recargarEnergia(nombre, energia, recuperacion) {
 //creacion funcion especial - gustavo
 function superAtaque(nombre1, nombre2,) {
     console.log(`${nombre1} realizo su super ataque ${nombreAtaque} a ${nombre2}`);
+    escudoMagico(nombre1, nombre2)
+}
+
+function escudoMagico(nom1, nom2) {
+    console.log(`${nom2} uso su escudo magico para anular el super ataque de ${nom1}`)
+
 }
 
 ataque(nombreHeroe1, nombreHeroe2, daño2, nivelEnergiaHeroe1, curacion)
