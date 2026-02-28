@@ -12,23 +12,31 @@ let nivelEnergiaHeroe2 = 98;
 let daño2 = 6;
 let defensaHeroe2 = 3;
 
-
+//Declaracion de variables
 let energiaActual = 0;
-
+let nombreAtaque = "PLUS ULTRA";
+let curacion = 0;
 
 function ataque(nombre1, nombre2, ataque, energia, recuperacion) {
     console.log(`${nombre2} ataco a ${nombre1}`)
-    defender(nombre1,nombre2, ataque, energia, recuperacion)
+    defender(nombre1, nombre2, ataque, energia, recuperacion)
 }
 
-function defender(nombre1, nombre2, ataque, energia, recuperacion) {    
+function defender(nombre1, nombre2, ataque, energia, recuperacion) {
     energiaActual = energia - ataque
     console.log(`${nombre1} recibio ${ataque} de daño por parte de ${nombre2} le queda ${energiaActual}`)
     recargarEnergia(nombre1, energiaActual, recuperacion)
 }
 
 function recargarEnergia(nombre, energia, recuperacion) {
-    console.log(`${nombre} recargo su energia, actualmente tiene ${energia+recuperacion}`)
+    curacion = (Math.floor(Math.random() * 10) + 1);
+    console.log(`${nombre} recargo su energia en ${curacion}, actualmente tiene ${energia + curacion}`)
 }
 
-ataque(nombreHeroe1, nombreHeroe2, daño2, nivelEnergiaHeroe1, 5)
+//creacion funcion especial - gustavo
+function superAtaque(nombre1, nombre2,) {
+    console.log(`${nombre1} realizo su super ataque ${nombreAtaque} a ${nombre2}`);
+}
+
+ataque(nombreHeroe1, nombreHeroe2, daño2, nivelEnergiaHeroe1, curacion)
+superAtaque(nombreHeroe1, nombreHeroe2);
